@@ -1,10 +1,10 @@
-package de.javandry.bddsamples.junit;
+package de.javandry.testingsamples.junit;
 
-import de.javandry.bddsamples.app.InvestmentPosition;
-import de.javandry.bddsamples.app.PositionValue;
-import de.javandry.bddsamples.app.Project;
-import de.javandry.bddsamples.app.ProjectManagementApp;
-import de.javandry.bddsamples.testdata.InvestmentPositionBuilder;
+import de.javandry.testingsamples.app.InvestmentPosition;
+import de.javandry.testingsamples.app.PositionValue;
+import de.javandry.testingsamples.app.Project;
+import de.javandry.testingsamples.app.ProjectManagementApp;
+import de.javandry.testingsamples.testdata.InvestmentPositionBuilder;
 import org.junit.Test;
 
 import java.math.BigDecimal;

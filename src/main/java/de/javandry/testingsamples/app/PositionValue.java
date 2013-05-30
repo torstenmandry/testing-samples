@@ -1,4 +1,4 @@
-package de.javandry.bddsamples.app;
+package de.javandry.testingsamples.app;
 
 import java.math.BigDecimal;
 

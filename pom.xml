@@ -2,11 +2,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>de.javandry</groupId>
-    <artifactId>bdd-samples</artifactId>
+    <artifactId>testing-samples</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>BDD Samples</name>
+    <name>Testing-Samples</name>
 
     <dependencies>
         <dependency>

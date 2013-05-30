@@ -1,4 +1,4 @@
-package de.javandry.bddsamples.testdata;
+package de.javandry.testingsamples.testdata;
 
 @SuppressWarnings("UnusedDeclaration")
 public class PersonBuilder {

@@ -1,6 +1,6 @@
-package de.javandry.bddsamples.testdata;
+package de.javandry.testingsamples.testdata;
 
-import de.javandry.bddsamples.app.Project;
+import de.javandry.testingsamples.app.Project;
 
 import java.util.Date;
 

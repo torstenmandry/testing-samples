@@ -1,11 +1,10 @@
-package de.javandry.bddsamples.testdata;
+package de.javandry.testingsamples.testdata;
 
-import de.javandry.bddsamples.app.InvestmentPosition;
-import de.javandry.bddsamples.app.Project;
+import de.javandry.testingsamples.app.InvestmentPosition;
+import de.javandry.testingsamples.app.Project;
 
 import java.math.BigDecimal;
 import java.util.Date;
-import java.util.GregorianCalendar;
 
 @SuppressWarnings("UnusedDeclaration")
 public class ConfigurableInvestmentPosition extends InvestmentPosition {

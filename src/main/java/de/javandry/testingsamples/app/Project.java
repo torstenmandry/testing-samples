@@ -1,4 +1,4 @@
-package de.javandry.bddsamples.app;
+package de.javandry.testingsamples.app;
 
 import java.util.Date;
 import java.util.HashSet;
