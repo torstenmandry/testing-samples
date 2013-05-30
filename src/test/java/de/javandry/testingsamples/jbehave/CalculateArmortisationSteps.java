@@ -23,7 +23,7 @@ public class CalculateArmortisationSteps {
         .withInitiationDate(initiationDate);
   }
 
-  @Given("an armortisation period of $months months")
+  @Given("an armortisation time of $months months")
   public void setupArmortisationPeriod(int months) {
     ProjectManagementApp.getInstance().setArmortisationMonths(months);
   }

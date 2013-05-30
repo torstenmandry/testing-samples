@@ -1,0 +1,44 @@
+<html xmlns:concordion="http://www.concordion.org/2007/concordion">
+<body>
+
+<h1>Calculate armortisation of an investment position</h1>
+
+<p>
+    As a user<br/>
+    I want to calculate the armortisation of an investment position<br/>
+    So that I can see the monthly armortisation amounts
+</p>
+
+<div class="example">
+
+    <h3>Scenario: calculate armortisation for 600000 EUR and 60 months</h3>
+
+    <p concordion:execute="#investment = setupInvestmentPosition(#amount, #initiationDate)">
+        Given an investment position
+        with amount <strong concordion:set="#amount">600000</strong> EUR
+        initiated on <strong concordion:set="#initiationDate">01.01.2012</strong>
+    </p>
+    <p concordion:execute="setupArmortisationTime(#months)">
+        And an armortisation time of <strong concordion:set="#months">60</strong> months
+    </p>
+
+    <p>
+        When I <strong concordion:execute="calculateArmortisation(#investment)">calculate the armortisation of the
+        investment position</strong>
+    </p>
+
+    <p>
+        Then the monthly armortisation amount is
+        <strong concordion:assertEquals="monthlyArmortisationAmount(#investment)">10000,00</strong> EUR
+    </p>
+    <p>
+        And the armortisation runs
+        from <strong concordion:assertEquals="armortisationStart(#investment)">01/2012</strong>
+        to <strong concordion:assertEquals="armortisationEnd(#investment)">12/2016</strong>
+        <strong concordion:assertTrue="isContinousArmortisation(#investment)">continously</strong>
+    </p>
+
+</div>
+
+</body>
+</html>
