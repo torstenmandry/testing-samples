@@ -28,6 +28,11 @@ public class ConfigurableInvestmentPosition extends InvestmentPosition {
     return this;
   }
 
+  public InvestmentPosition withInitiationDate(String initiationDate) {
+    this.setInitiationDate(DateBuilder.parse(initiationDate).toDate());
+    return this;
+  }
+
   public ConfigurableInvestmentPosition withCostCenter(String costCenter) {
     this.setCostCenter(costCenter);
     return this;
@@ -37,4 +42,5 @@ public class ConfigurableInvestmentPosition extends InvestmentPosition {
     this.setProject(project);
     return this;
   }
+
 }

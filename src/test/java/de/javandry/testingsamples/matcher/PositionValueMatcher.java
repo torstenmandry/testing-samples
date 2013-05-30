@@ -9,6 +9,7 @@ import java.math.BigDecimal;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.List;
+import java.util.regex.Pattern;
 
 import static java.lang.String.format;
 
@@ -85,4 +86,21 @@ public class PositionValueMatcher {
     };
   }
 
+  public static Matcher<? super List<PositionValue>> containsMonthsFromTo(final String fromMonthYear,
+                                                                          final String toMonthYear) {
+    Pattern pattern = Pattern.compile("^(\\d+)/(\\d+)$");
+
+    java.util.regex.Matcher fromMonthYearMatcher = pattern.matcher(fromMonthYear);
+    if(!fromMonthYearMatcher.matches()) {
+      throw new IllegalArgumentException("fromMonthYear: " + fromMonthYear);
+    }
+    java.util.regex.Matcher toMonthYearMatcher = pattern.matcher(toMonthYear);
+    if(!toMonthYearMatcher.matches()) {
+      throw new IllegalArgumentException("toMonthYear: " + toMonthYear);
+    }
+
+    return containsMonthsFromTo(
+        Integer.valueOf(fromMonthYearMatcher.group(1)), Integer.valueOf(fromMonthYearMatcher.group(2)),
+        Integer.valueOf(toMonthYearMatcher.group(1)), Integer.valueOf(toMonthYearMatcher.group(2)));
+  }
 }

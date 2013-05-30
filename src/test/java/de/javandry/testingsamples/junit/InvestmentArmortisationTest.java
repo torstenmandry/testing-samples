@@ -77,4 +77,23 @@ public class InvestmentArmortisationTest {
     assertThat(investment.getArmortisation(), containsMonthsFromTo(1, 2012, 12, 2016));
   }
 
+  @Test
+  public void otherCalculateArmortisationTest() {
+    // Gegeben sei eine Investition
+    // im Wert von 30 TEUR
+    // aktiviert am 01.01.2012
+    InvestmentPosition investment = InvestmentPositionBuilder.createDefault()
+        .withAmount(30000)
+        .withInitiationDate(1, 1, 2012);
+    // und eine Abschreibungsdauer von 24 Monaten
+    ProjectManagementApp.getInstance().setArmortisationMonths(24);
+
+    // wenn die Abschreibung berechnet wird
+    investment.calculateArmortisation();
+
+    // dann folgt daraus eine monatliche Abschreibung in Höhe von 1.250 EUR
+    // in der Zeit von 01/2012 bis 12/2013
+    assertThat(investment.getArmortisation(), haveConstantAmount(1250));
+    assertThat(investment.getArmortisation(), containsMonthsFromTo(1, 2012, 12, 2013));
+  }
 }
