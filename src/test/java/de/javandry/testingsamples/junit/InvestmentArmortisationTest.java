@@ -12,7 +12,7 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 import static de.javandry.testingsamples.matcher.PositionValueMatcher.containsMonthsFromTo;
-import static de.javandry.testingsamples.matcher.PositionValueMatcher.haveConstantAmount;
+import static de.javandry.testingsamples.matcher.PositionValueMatcher.hasConstantAmount;
 import static java.lang.String.format;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
@@ -73,7 +73,7 @@ public class InvestmentArmortisationTest {
 
     // dann folgt daraus eine monatliche Abschreibung in Höhe von 10 TEUR
     // in der Zeit von 01/2012 bis 12/2016
-    assertThat(investment.getArmortisation(), haveConstantAmount(10000));
+    assertThat(investment.getArmortisation(), hasConstantAmount(10000));
     assertThat(investment.getArmortisation(), containsMonthsFromTo(1, 2012, 12, 2016));
   }
 
@@ -93,7 +93,7 @@ public class InvestmentArmortisationTest {
 
     // dann folgt daraus eine monatliche Abschreibung in Höhe von 1.250 EUR
     // in der Zeit von 01/2012 bis 12/2013
-    assertThat(investment.getArmortisation(), haveConstantAmount(1250));
+    assertThat(investment.getArmortisation(), hasConstantAmount(1250));
     assertThat(investment.getArmortisation(), containsMonthsFromTo(1, 2012, 12, 2013));
   }
 }

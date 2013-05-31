@@ -9,7 +9,7 @@ import de.javandry.testingsamples.app.ProjectManagementApp;
 import de.javandry.testingsamples.testdata.InvestmentPositionFactory;
 
 import static de.javandry.testingsamples.matcher.PositionValueMatcher.containsMonthsFromTo;
-import static de.javandry.testingsamples.matcher.PositionValueMatcher.haveConstantAmount;
+import static de.javandry.testingsamples.matcher.PositionValueMatcher.hasConstantAmount;
 import static org.junit.Assert.assertThat;
 
 @SuppressWarnings("UnusedDeclaration")
@@ -36,7 +36,7 @@ public class CalculateArmortisationSzenario {
 
   @Then("the monthly armortisation amount is (\\d+) EUR")
   public void assertMonthlyArmortisationAmount(double amount) {
-    assertThat(investment.getArmortisation(), haveConstantAmount(amount));
+    assertThat(investment.getArmortisation(), hasConstantAmount(amount));
   }
 
   @And("the armortisation runs from (\\d{2}\\/\\d{4}) to (\\d{2}\\/\\d{4})$")

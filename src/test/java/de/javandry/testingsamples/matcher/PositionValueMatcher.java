@@ -15,7 +15,7 @@ import static java.lang.String.format;
 
 public class PositionValueMatcher {
 
-  public static Matcher<? super List<PositionValue>> haveConstantAmount(final double expectedAmount) {
+  public static Matcher<? super List<PositionValue>> hasConstantAmount(final double expectedAmount) {
     return new TypeSafeMatcher<List<PositionValue>>() {
       private PositionValue currentPositionValue;
 
@@ -32,10 +32,14 @@ public class PositionValueMatcher {
 
       @Override
       public void describeTo(Description description) {
-        description.appendText(format("unexpected amount in %02d/%4d: %.2f",
-            currentPositionValue.getMonth(),
-            currentPositionValue.getYear(),
-            currentPositionValue.getAmount()));
+        description.appendText("constant amount ").appendValue(expectedAmount).appendText(" for all months");
+      }
+
+      @Override
+      protected void describeMismatchSafely(List<PositionValue> item, Description mismatchDescription) {
+        mismatchDescription
+            .appendText(format("amount for month %02d/%4d was ", currentPositionValue.getMonth(), currentPositionValue.getYear()))
+            .appendValue(currentPositionValue.getAmount());
       }
     };
   }
