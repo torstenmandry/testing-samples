@@ -6,7 +6,7 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import de.javandry.testingsamples.app.InvestmentPosition;
 import de.javandry.testingsamples.app.ProjectManagementApp;
-import de.javandry.testingsamples.testdata.InvestmentPositionBuilder;
+import de.javandry.testingsamples.testdata.InvestmentPositionFactory;
 
 import static de.javandry.testingsamples.matcher.PositionValueMatcher.containsMonthsFromTo;
 import static de.javandry.testingsamples.matcher.PositionValueMatcher.haveConstantAmount;
@@ -19,7 +19,7 @@ public class CalculateArmortisationSzenario {
 
   @Given("an investment position with amount (\\d+) EUR initiated on (\\d{2}\\.\\d{2}\\.\\d{4})$")
   public void setupInvestmentPosition(double amount, String initiationDate) {
-    investment = InvestmentPositionBuilder.createDefault()
+    investment = InvestmentPositionFactory.createDefault()
         .withAmount(amount)
         .withInitiationDate(initiationDate);
   }

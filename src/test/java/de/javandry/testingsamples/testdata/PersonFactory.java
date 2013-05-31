@@ -1,7 +1,7 @@
 package de.javandry.testingsamples.testdata;
 
 @SuppressWarnings("UnusedDeclaration")
-public class PersonBuilder {
+public class PersonFactory {
 
   public static final String DEFAULT_FIRST_NAME = "Peter";
   public static final String DEFAULT_LAST_NAME = "Pan";

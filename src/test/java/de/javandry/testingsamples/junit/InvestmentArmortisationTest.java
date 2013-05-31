@@ -4,7 +4,7 @@ import de.javandry.testingsamples.app.InvestmentPosition;
 import de.javandry.testingsamples.app.PositionValue;
 import de.javandry.testingsamples.app.Project;
 import de.javandry.testingsamples.app.ProjectManagementApp;
-import de.javandry.testingsamples.testdata.InvestmentPositionBuilder;
+import de.javandry.testingsamples.testdata.InvestmentPositionFactory;
 import org.junit.Test;
 
 import java.math.BigDecimal;
@@ -62,7 +62,7 @@ public class InvestmentArmortisationTest {
     // Gegeben sei eine Investition
     // im Wert von 600 TEUR
     // aktiviert am 01.01.2012
-    InvestmentPosition investment = InvestmentPositionBuilder.createDefault()
+    InvestmentPosition investment = InvestmentPositionFactory.createDefault()
         .withAmount(600000)
         .withInitiationDate(1, 1, 2012);
     // und eine Abschreibungsdauer von 60 Monaten
@@ -82,7 +82,7 @@ public class InvestmentArmortisationTest {
     // Gegeben sei eine Investition
     // im Wert von 30 TEUR
     // aktiviert am 01.01.2012
-    InvestmentPosition investment = InvestmentPositionBuilder.createDefault()
+    InvestmentPosition investment = InvestmentPositionFactory.createDefault()
         .withAmount(30000)
         .withInitiationDate(1, 1, 2012);
     // und eine Abschreibungsdauer von 24 Monaten

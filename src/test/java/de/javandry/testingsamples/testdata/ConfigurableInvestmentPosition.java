@@ -2,6 +2,7 @@ package de.javandry.testingsamples.testdata;
 
 import de.javandry.testingsamples.app.InvestmentPosition;
 import de.javandry.testingsamples.app.Project;
+import de.javandry.testingsamples.util.DateBuilder;
 
 import java.math.BigDecimal;
 import java.util.Date;

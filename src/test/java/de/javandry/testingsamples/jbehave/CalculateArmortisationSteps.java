@@ -2,7 +2,7 @@ package de.javandry.testingsamples.jbehave;
 
 import de.javandry.testingsamples.app.InvestmentPosition;
 import de.javandry.testingsamples.app.ProjectManagementApp;
-import de.javandry.testingsamples.testdata.InvestmentPositionBuilder;
+import de.javandry.testingsamples.testdata.InvestmentPositionFactory;
 import org.jbehave.core.annotations.Given;
 import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
@@ -18,7 +18,7 @@ public class CalculateArmortisationSteps {
 
   @Given("an investment position with amount $amount EUR initiated on $initiationDate")
   public void setupInvestmentPosition(double amount, String initiationDate) {
-    investment = InvestmentPositionBuilder.createDefault()
+    investment = InvestmentPositionFactory.createDefault()
         .withAmount(amount)
         .withInitiationDate(initiationDate);
   }

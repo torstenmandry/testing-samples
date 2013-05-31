@@ -1,10 +1,11 @@
 package de.javandry.testingsamples.testdata;
 
 import de.javandry.testingsamples.app.Project;
+import de.javandry.testingsamples.util.DateBuilder;
 
 import java.util.Date;
 
-public class InvestmentPositionBuilder {
+public class InvestmentPositionFactory {
 
   private static final String DEFAULT_NAME = "any position name";
   private static final double DEFAULT_AMOUNT = 100000;
@@ -16,7 +17,7 @@ public class InvestmentPositionBuilder {
         .withAmount(DEFAULT_AMOUNT)
         .withInitiationDate(DEFAULT_INITIATION_DATE)
         .withCostCenter(DEFAULT_COST_CENTER);
-    Project project = ProjectBuilder.createDefault();
+    Project project = ProjectFactory.createDefault();
     project.addPosition(investmentPosition);
     return investmentPosition;
   }
