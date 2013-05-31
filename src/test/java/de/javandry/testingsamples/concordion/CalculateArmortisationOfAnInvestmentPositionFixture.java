@@ -44,7 +44,11 @@ public class CalculateArmortisationOfAnInvestmentPositionFixture {
     StringBuilder variousAmounts = new StringBuilder("various: [");
     boolean first = true;
     for (BigDecimal amount : uniqueAmounts) {
-      if (!first) variousAmounts.append(", ");
+      if (first) {
+        first = false;
+      } else {
+        variousAmounts.append(", ");
+      }
       variousAmounts.append(amount.toString());
     }
     variousAmounts.append("]");
